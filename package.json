@@ -1,0 +1,47 @@
+{
+  "name": "r3arxiv-react3-archive",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "agent:export": "node scripts/export-agent-pack.mjs",
+    "verify:agent": "node scripts/verify-agent-pack.mjs",
+    "r3arxiv": "node skills/r3arxiv-react-three-dev/scripts/r3arxiv-cli.mjs",
+    "r3arxiv:mcp": "node skills/r3arxiv-react-three-dev/scripts/r3arxiv-mcp-server.mjs",
+    "r3arxiv:query": "node skills/r3arxiv-react-three-dev/scripts/r3arxiv-query.mjs",
+    "r3f:audit": "node skills/r3arxiv-react-three-dev/scripts/r3f-audit.mjs",
+    "capture:screenshots": "node scripts/capture-previews.mjs",
+    "verify:ui": "node scripts/verify-ui.mjs",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "@react-three/postprocessing": "^3.0.4",
+    "lucide-react": "^1.16.0",
+    "postprocessing": "^6.39.1",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "three": "^0.184.0",
+    "three-stdlib": "^2.36.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "playwright-core": "^1.60.0",
+    "sharp": "^0.34.5",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.59.2",
+    "vite": "^8.0.12"
+  }
+}

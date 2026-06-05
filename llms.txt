@@ -1,0 +1,36 @@
+# R3ARXIV
+
+> Agent-ready archive of React Three Fiber, Three.js, WebGL, WebGPU, XR, asset-pipeline, shader, game, and creative-web resources.
+
+R3ARXIV is a curated visual wiki for building 3D web apps. It contains 567 resources across 12 channels, with local previews and agent-oriented exports for retrieval, task routing, and source citation.
+
+## Start Here
+
+- [Agent guide](docs/agent/README.md): How coding agents should ingest and route this collection.
+- [Full agent context](llms-full.txt): Single-file Markdown bundle for large-context agents.
+- [Human app / README](README.md): Run and curate the visual interface.
+
+## Machine-Readable Indexes
+
+- [Full catalog](docs/agent/catalog.json): Normalized JSON with all resources, taxonomy, routes, and source fields.
+- [Resource records](docs/agent/resources.jsonl): One JSON object per resource.
+- [Retrieval chunks](docs/agent/chunks.jsonl): JSON Lines chunks suitable for vector stores and search indexes.
+- [Document index](docs/agent/docs.index.json): Generated artifact manifest with hashes and descriptions.
+
+## Agent Routing
+
+- [Task routes](docs/agent/routes.json): Maps common 3D web app intents to resource IDs.
+- [Prompt templates](docs/agent/prompts.json): Reusable prompts for Codex, Claude Code, Copilot, Cursor, or MCP prompt servers.
+- [MCP resource manifest](docs/agent/mcp-resources.json): MCP-shaped resource descriptors for future read-only servers.
+
+## Agent Skill
+
+- [R3ARXIV React Three Dev skill](skills/r3arxiv-react-three-dev/SKILL.md): Consolidated R3F, Three.js, shader, XR, asset, physics, ECS, and performance workflow for coding agents.
+
+## Catalog Markdown
+
+- [Resource catalog](docs/agent/resources.md): Human-readable Markdown list of every resource with URLs, tags, and agent routes.
+
+## Optional
+
+- [Visual previews](public/screenshots/): Local WebP previews for visual inspection.

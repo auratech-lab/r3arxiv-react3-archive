@@ -1,0 +1,8 @@
+interface:
+  display_name: "R3ARXIV React Three Dev"
+  short_description: "React Three / R3F agent workflow."
+  brand_color: "#61DAFB"
+  default_prompt: "Use $r3arxiv-react-three-dev to plan, build, or review this React Three Fiber / Three.js task."
+
+policy:
+  allow_implicit_invocation: true

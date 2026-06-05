@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist-ssr/
+artifacts/
+coverage/
+playwright-report/
+test-results/
+logs/
+*.log
+.DS_Store
+.codex-session-archive/
+.env
+.env.*
+!.env.example

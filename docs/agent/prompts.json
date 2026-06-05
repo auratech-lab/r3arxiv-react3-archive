@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-04T20:28:53.647Z",
+  "prompts": [
+    {
+      "name": "r3arxiv_select_stack",
+      "title": "Select a 3D Web Stack",
+      "description": "Choose R3ARXIV resources for a concrete React Three Fiber or Three.js project.",
+      "arguments": [
+        {
+          "name": "project_goal",
+          "required": true
+        },
+        {
+          "name": "constraints",
+          "required": false
+        },
+        {
+          "name": "preferred_style",
+          "required": false
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use docs/agent/routes.json and docs/agent/catalog.json to select a practical 3D web stack for: {{project_goal}}. Respect constraints: {{constraints}}. Prefer canonical/production resources for implementation and creative/showcase resources for visual direction. Return resource IDs, source URLs, and a concise build plan."
+        }
+      ]
+    },
+    {
+      "name": "r3arxiv_debug_scene",
+      "title": "Debug a 3D Scene",
+      "description": "Route debugging tasks to performance, rendering, asset, and platform resources.",
+      "arguments": [
+        {
+          "name": "symptoms",
+          "required": true
+        },
+        {
+          "name": "current_stack",
+          "required": false
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use R3ARXIV route performance-debug plus any matching catalog tags to diagnose these symptoms: {{symptoms}}. Current stack: {{current_stack}}. Return likely causes, commands or browser checks to run, and the most relevant resources with URLs."
+        }
+      ]
+    },
+    {
+      "name": "r3arxiv_asset_pipeline",
+      "title": "Plan an Asset Pipeline",
+      "description": "Find conversion, compression, validation, and free-source assets for web 3D.",
+      "arguments": [
+        {
+          "name": "asset_type",
+          "required": true
+        },
+        {
+          "name": "target_runtime",
+          "required": false
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use the asset-pipeline route in docs/agent/routes.json. I need assets of type {{asset_type}} for {{target_runtime}}. Recommend source libraries, conversion steps, validation/compression tools, and performance checks. Include resource IDs and URLs."
+        }
+      ]
+    },
+    {
+      "name": "r3arxiv_visual_research",
+      "title": "Find Visual References",
+      "description": "Use artist, studio, showcase, shader, and web-experience resources for taste-building.",
+      "arguments": [
+        {
+          "name": "visual_direction",
+          "required": true
+        },
+        {
+          "name": "implementation_medium",
+          "required": false
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use the visual-inspiration, shader-effects, and web-experiences routes to research this visual direction: {{visual_direction}}. Medium: {{implementation_medium}}. Return references, why each matters, implementation leads, and URLs."
+        }
+      ]
+    },
+    {
+      "name": "r3arxiv_ingest",
+      "title": "Ingest R3ARXIV",
+      "description": "Instructions for an agent or retrieval system consuming this pack.",
+      "arguments": [
+        {
+          "name": "target_platform",
+          "required": false
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Ingest this repo's agent pack for {{target_platform}}. Read AGENTS.md, llms.txt, docs/agent/README.md, docs/agent/docs.index.json, and docs/agent/chunks.jsonl. Preserve IDs, source URLs, tags, routes, and content hashes in your index."
+        }
+      ]
+    },
+    {
+      "name": "r3arxiv_review_r3f_code",
+      "title": "Review React Three Code",
+      "description": "Use the bundled R3ARXIV React Three Dev skill and audit script to review R3F/Three.js code.",
+      "arguments": [
+        {
+          "name": "paths",
+          "required": true
+        },
+        {
+          "name": "review_focus",
+          "required": false
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use skills/r3arxiv-react-three-dev/SKILL.md to review {{paths}} for React Three Fiber / Three.js issues. Run npm run r3f:audit -- {{paths}} when available, then manually apply skills/r3arxiv-react-three-dev/references/review-rules.md. Focus: {{review_focus}}. Return prioritized findings with file/line references and suggested fixes."
+        }
+      ]
+    }
+  ],
+  "routePromptHints": [
+    {
+      "routeId": "start-r3f-app",
+      "title": "Start or repair a React Three Fiber app",
+      "prompt": "For tasks matching r3f, react three fiber, canvas, starter, vite, start with resources: r3f, r3f-docs, threejs, threejs-docs, vite, typescript, gltfjsx, leva, zustand, maath, react-use-measure."
+    },
+    {
+      "routeId": "asset-pipeline",
+      "title": "Choose and optimize a 3D asset pipeline",
+      "prompt": "For tasks matching gltf, glb, assets, models, compression, textures, start with resources: gltfjsx, gltf-transform, gltf-validator, gltf-report, gltfpack, meshoptimizer, draco, ktx, blender, blender-gltf-exporter, mixamo-to-gltf, polyhaven, ambientcg, sketchfab, fab."
+    },
+    {
+      "routeId": "shader-effects",
+      "title": "Build shaders, materials, and post effects",
+      "prompt": "For tasks matching shader, glsl, wgsl, material, postprocessing, effect, start with resources: book-of-shaders, shadertoy, lygia, hg-sdf, glsl-noise, glsl-easings, glsl-aastep, shader-park, lamina, shader-composer, react-shader-fiber, postprocessing, n8ao, three-custom-shader-material."
+    },
+    {
+      "routeId": "performance-debug",
+      "title": "Debug performance, loading, and rendering limits",
+      "prompt": "For tasks matching performance, debug, fps, profiling, worker, bvh, start with resources: r3f-perf, drei-performance-monitor, stats-gl, stats-js, detect-gpu, chrome-performance, webgl-report, three-mesh-bvh, react-three-offscreen, meshoptimizer, vite-plugin-compression."
+    },
+    {
+      "routeId": "xr-ar-vr",
+      "title": "Plan WebXR, AR, VR, and spatial input",
+      "prompt": "For tasks matching webxr, ar, vr, headset, hand tracking, hit test, start with resources: immersive-web, mdn-webxr, three-webxr, webxr-samples, webxr-spec, webxr-input-profiles, webxr-hit-test, webxr-hand-input, webxr-layers, meta-presence-platform, zappar-react-three-fiber, coconut-xr-koestlich."
+    },
+    {
+      "routeId": "physics-games",
+      "title": "Build game loops, physics, navigation, and multiplayer",
+      "prompt": "For tasks matching physics, game, rapier, character, ecs, multiplayer, start with resources: react-three-rapier, rapier, cannon-es, react-three-cannon, ecctrl, miniplex, bitecs, yuka, recast-navigation, three-pathfinding, navmesh, colyseus, geckos, trystero, phaser, excaliburjs, kaboom."
+    },
+    {
+      "routeId": "visual-inspiration",
+      "title": "Find visual references, studios, and artists",
+      "prompt": "For tasks matching inspiration, showcase, artist, studio, creative coding, start with resources: bruno-simon, yuri-artiukh, aristide-benoist, raven-kwok, patricio-gonzalez-vivo, matt-deslauriers, nicky-case, active-theory, resn, hello-monday, lusion, makemepulse, unit9, the-fwa."
+    },
+    {
+      "routeId": "data-maps-ai",
+      "title": "Use maps, globes, splats, scans, and generated 3D assets",
+      "prompt": "For tasks matching maps, globe, splats, 3d tiles, ai assets, scans, start with resources: react-globe-gl, r3f-globe, three-globe, deck-gl, kepler-gl, maplibre-gl-js, cesiumjs, 3d-tiles-renderer, google-scanned-objects, objaverse-xl, luma-genie, tripo-ai, meshy, gaussian-splats-3d, sparkjs, supersplat, nerfstudio."
+    },
+    {
+      "routeId": "learning-theory",
+      "title": "Learn graphics fundamentals and durable theory",
+      "prompt": "For tasks matching learning, graphics, math, webgl, webgpu, rendering, start with resources: discover-three, threejs-fundamentals, webgl-fundamentals, webgl2-fundamentals, webgpu-fundamentals, math-for-3d, book-of-shaders, graphics-compendium, real-time-rendering, gpu-gems, raytracing-weekend, pbr-book, scratchapixel, learnopengl, nature-of-code."
+    },
+    {
+      "routeId": "web-experiences",
+      "title": "Build editorial, portfolio, and scroll-driven 3D websites",
+      "prompt": "For tasks matching portfolio, website, scroll, animation, editorial, spline, start with resources: r3f-portfolio-starter, react-three-next, r3f-scroll-rig, theatre, gsap, gsap-scrolltrigger, lenis, locomotive-scroll, framer-motion, react-spring, unicorn-studio, spline, dora."
+    }
+  ]
+}
